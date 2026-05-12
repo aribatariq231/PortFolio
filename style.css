@@ -519,6 +519,65 @@ footer {
     border-top: 1px solid #1e293b;
     color: var(--gray);
 }
+/* Footer with Social Icons */
+footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    color: var(--gray);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--card);
+    color: var(--gray);
+    font-size: 1.4rem;
+    transition: 0.3s ease;
+    text-decoration: none;
+    border: 1px solid #2d3e50;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+.social-icon.github:hover {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+.social-icon.linkedin:hover {
+    background: #0077b5;
+    color: white;
+    border-color: #0077b5;
+}
+
+footer p {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
 
 /* Animations */
 @keyframes fadeInUp {
