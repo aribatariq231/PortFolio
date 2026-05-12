@@ -12,6 +12,8 @@
     --accent: #f43f5e;
     --text: #f8fafc;
     --gray: #94a3b8;
+    --tech-bg: #1e293b;
+    --success: #10b981;
 }
 
 body {
@@ -37,6 +39,7 @@ body {
     top: 0;
     z-index: 1000;
     background: rgba(11, 15, 25, 0.95);
+    backdrop-filter: blur(8px);
 }
 
 .logo {
@@ -74,15 +77,22 @@ body {
     background: var(--accent);
     color: white;
     cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* Refined Hero Section */
+.login-nav:hover {
+    background: #e11d48;
+    transform: scale(1.02);
+}
+
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     background: linear-gradient(to right, rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.6)),
-        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1472');
+        url('./bg-img.avif');
     background-size: cover;
     background-position: center;
 }
@@ -137,6 +147,9 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-outline {
@@ -146,6 +159,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;
+    font-weight: 600;
 }
 
 .btn-fill:hover {
@@ -153,7 +167,12 @@ body {
     transform: translateY(-3px);
 }
 
-/* About - Professional Split */
+.btn-outline:hover {
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateY(-3px);
+}
+
+/* About Section */
 .about {
     padding: 120px 0;
     background: #0f172a;
@@ -171,12 +190,15 @@ body {
     justify-content: center; 
 }
 
+/* Fixed image size - reduced height */
 .about-img-box img { 
-    width: 80%; 
-    max-width: 350px; 
+    width: 70%; 
+    max-width: 320px; 
     height: auto; 
-    border-radius: 20px; 
+    border-radius: 28px; 
     transition: 0.3s ease;
+    object-fit: cover;
+    box-shadow: 0 20px 35px -10px rgba(0,0,0,0.4);
 }
 
 .about-img-box img:hover {
@@ -190,18 +212,61 @@ body {
 .tagline {
     color: var(--accent);
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .about-content h2 {
     font-size: 2.2rem;
-    margin: 15px 0;
+    margin: 15px 0 20px;
+}
+
+.about-text {
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Tech stack buttons */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px 0 20px;
+}
+
+.tech-btn {
+    background: var(--tech-bg);
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    border: 1px solid #334155;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+}
+
+.tech-btn i {
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+.tech-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    cursor: default;
 }
 
 .stats {
     list-style: none;
     display: flex;
     gap: 40px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .stats strong {
@@ -210,7 +275,7 @@ body {
     color: var(--primary);
 }
 
-/* Projects - 2x2 Grid */
+/* Projects Section */
 .projects {
     padding: 100px 0;
     background: var(--bg);
@@ -220,29 +285,43 @@ body {
     text-align: center;
     margin-bottom: 60px;
     font-size: 2.2rem;
+    position: relative;
 }
 
-.project-grid-2x2 {
+.section-title:after {
+    content: '';
+    width: 70px;
+    height: 3px;
+    background: var(--accent);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+/* 3 columns grid for 6 projects */
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
 .project-item {
     background: var(--card);
-    padding: 50px;
-    border-radius: 15px;
+    padding: 35px 25px;
+    border-radius: 20px;
     text-decoration: none;
     color: white;
     transition: 0.4s;
-    border: 1px solid transparent;
+    border: 1px solid #1e2a3e;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-item:hover {
     border-color: var(--primary);
     background: #1e293b;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
 .p-icon {
@@ -258,10 +337,77 @@ body {
 
 .project-item p {
     color: var(--gray);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
-/* Contact - Split Design */
+/* Project buttons container */
+.project-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+/* GitHub button */
+.github-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.github-btn i {
+    font-size: 0.9rem;
+}
+
+.github-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Preview button */
+.preview-btn {
+    background: transparent;
+    border: 1px solid var(--success);
+    color: var(--success);
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.preview-btn i {
+    font-size: 0.9rem;
+}
+
+.preview-btn:hover {
+    background: var(--success);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Contact Section */
 .contact {
     padding: 120px 0;
     background: #0f172a;
@@ -279,8 +425,9 @@ body {
 
 .contact-visual img {
     width: 100%;
-    border-radius: 15px;
-    opacity: 0.7;
+    border-radius: 24px;
+    opacity: 0.8;
+    transition: 0.3s;
 }
 
 .contact-area {
@@ -303,8 +450,14 @@ body {
     background: var(--bg);
     border: 1px solid #2d3e50;
     color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     outline: none;
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
 }
 
 /* Modal */
@@ -324,10 +477,11 @@ body {
 .modal-content {
     background: var(--card);
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 24px;
     width: 400px;
     position: relative;
     text-align: center;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.5);
 }
 
 .modal-input {
@@ -337,7 +491,7 @@ body {
     background: var(--bg);
     border: 1px solid #334155;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .full-width {
@@ -351,6 +505,11 @@ body {
     top: 15px;
     cursor: pointer;
     font-size: 1.5rem;
+    transition: 0.2s;
+}
+
+.close:hover {
+    color: var(--accent);
 }
 
 /* Footer */
@@ -367,27 +526,63 @@ footer {
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Mobile Responsive */
-@media (max-width: 900px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media (max-width: 900px) {
     .about-flex,
     .contact-split {
         flex-direction: column;
     }
-
-    .project-grid-2x2 {
+    .project-grid {
         grid-template-columns: 1fr;
     }
-
-    /* 1 column on small screens */
     .main-name {
         font-size: 2.5rem;
+    }
+    .hero-content {
+        padding-right: 20px;
+    }
+    .tech-stack {
+        justify-content: center;
+    }
+    .stats {
+        justify-content: center;
+    }
+    .about-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 16px;
+    }
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+    .project-item {
+        padding: 25px 18px;
+    }
+    .modal-content {
+        width: 90%;
+        margin: 20px;
+    }
+    .project-buttons {
+        flex-direction: column;
+    }
+    .github-btn, .preview-btn {
+        width: 100%;
+        justify-content: center;
     }
 }

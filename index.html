@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ariba Tariq | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -39,14 +40,26 @@
         <div class="container">
             <div class="about-flex">
                 <div class="about-img-box">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Professional Portrait">
+                    <img src="./about-me.jpeg" alt="Professional Portrait">
                 </div>
                 <div class="about-content">
                     <span class="tagline">Who I Am</span>
                     <h2>Professional Profile</h2>
-                    <p>With a solid foundation in frontend technologies, I transform complex problems into elegant digital solutions. My approach combines technical expertise with a creative mindset to deliver products that stand out.</p>
+                    <p class="about-text">"I am a passionate MERN stack developer focused on creating responsive and dynamic web applications. I enjoy learning new technologies and enhancing my full-stack development skills."</p>
+                    
+                    <!-- Tech Stack Buttons -->
+                    <div class="tech-stack">
+                        <span class="tech-btn"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="tech-btn"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="tech-btn"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="tech-btn"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        <span class="tech-btn"><i class="fab fa-react"></i> React</span>
+                        <span class="tech-btn"><i class="fab fa-node"></i> Node.js</span>
+                        <span class="tech-btn"><i class="fas fa-database"></i> MongoDB</span>
+                    </div>
+                    
                     <ul class="stats">
-                        <li><strong>4+</strong> Projects Done</li>
+                        <li><strong>6+</strong> Projects Done</li>
                         <li><strong>100%</strong> Passion</li>
                     </ul>
                 </div>
@@ -54,32 +67,81 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section - 6 Projects with GitHub + Preview buttons -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Selected Works</h2>
-            <!-- 2 Rows and 2 Columns Grid -->
-            <div class="project-grid-2x2">
-                <a href="https://weather-app-6aqa.vercel.app/" class="project-item">
+            <h2 class="section-title">Completed Projects</h2>
+            <div class="project-grid">
+                <!-- 1. Chat bot -->
+                <div class="project-item">
+                    <div class="p-icon"><i class="fas fa-paper-plane"></i></div>
+                    <h3>Chat Bot</h3>
+                    <p>AI chatbot for instant replies and smart conversations.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/aribatariq231/chatbot.git" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://chat-bot-nu-pink.vercel.app/" target="_blank" class="preview-btn"><i class="fas fa-external-link-alt"></i> Preview</a>
+                    </div>
+                </div>
+                <!-- 2. Weather App -->
+                <div class="project-item">
                     <div class="p-icon"><i class="fas fa-cloud-sun"></i></div>
                     <h3>Weather App</h3>
-                    <p>Dynamic forecast application using OpenWeather API.</p>
-                </a>
-                <a href="#" class="project-item">
-                    <div class="p-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Password Generator</h3>
-                    <p>Advanced security tool for encrypted credentials.</p>
-                </a>
-                <a href="#" class="project-item">
-                    <div class="p-icon"><i class="fas fa-paper-plane"></i></div>
-                    <h3>Chat Application</h3>
-                    <p>Real-time communication platform with modern UI.</p>
-                </a>
-                <a href="#" class="project-item">
+                    <p>Dynamic forecast application using OpenWeather API with location detection.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/aribatariq231/WeatherApp.git" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://weather-app-6aqa.vercel.app/" target="_blank" class="preview-btn"><i class="fas fa-external-link-alt"></i> Preview</a>
+                    </div>
+                </div>
+                <!-- 3. ToDo App -->
+                <div class="project-item">
+                    <div class="p-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>ToDo App</h3>
+                    <p>Productivity task manager with local storage and smooth drag & drop.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/aribatariq231/To-Do-App.git" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://to-do-app-rho-two-56.vercel.app/" target="_blank" class="preview-btn"><i class="fas fa-external-link-alt"></i> Preview</a>
+                    </div>
+                </div>
+                <!-- 4. E-Commerce Store -->
+                <div class="project-item">
                     <div class="p-icon"><i class="fas fa-store"></i></div>
                     <h3>E-Commerce Store</h3>
-                    <p>Full-scale digital storefront with cart functionality.</p>
-                </a>
+                    <p>Full-scale digital storefront with cart functionality and product filtering.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/aribatariq231/E-Commerece.git" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://e-commerece-efv7.vercel.app/" target="_blank" class="preview-btn"><i class="fas fa-external-link-alt"></i> Preview</a>
+                    </div>
+                </div>
+                <!-- 5. Password Generator -->
+                <div class="project-item">
+                    <div class="p-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Password Generator</h3>
+                    <p>Advanced security tool for encrypted credentials with strength meter.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/aribatariq231/Password.Generator.git" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://password-generator-mg3p.vercel.app/" target="_blank" class="preview-btn"><i class="fas fa-external-link-alt"></i> Preview</a>
+                    </div>
+                </div>
+                <!-- 6. Netflix Clone -->
+                <div class="project-item">
+                    <div class="p-icon"><i class="fas fa-film"></i></div>
+                    <h3>Netflix Clone</h3>
+                    <p>Streaming platform UI replica with dynamic carousels and TMDB integration.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/aribatariq231/Netflix-Clone.git" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://netflix-clone-orcin-psi-74.vercel.app/" target="_blank" class="preview-btn"><i class="fas fa-external-link-alt"></i> Preview</a>
+                    </div>
+                </div>
+                <!-- 1. Chat Application -->
+                <div class="project-item">
+                    <div class="p-icon"><i class="fas fa-paper-plane"></i></div>
+                    <h3>Chat Application</h3>
+                    <p>Real-time communication platform with modern UI and instant messaging features.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/aribatariq231/ChatApp.git" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://chat-app-two-khaki-12.vercel.app/" target="_blank" class="preview-btn"><i class="fas fa-external-link-alt"></i> Preview</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -89,19 +151,19 @@
         <div class="container">
             <div class="contact-split">
                 <div class="contact-visual">
-                    <img src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&q=80&w=600" alt="Connect">
+                    <img src="./team-work.webp" alt="Connect">
                 </div>
                 <div class="contact-area">
                     <h2>Work Together</h2>
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Full Name" required>
+                            <input type="text" placeholder="Full Name" required id="fullname">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email Address" required>
+                            <input type="email" placeholder="Email Address" required id="emailAddr">
                         </div>
                         <div class="form-group">
-                            <textarea rows="4" placeholder="How can I help you?" required></textarea>
+                            <textarea rows="4" placeholder="How can I help you?" required id="message"></textarea>
                         </div>
                         <button type="submit" class="btn-fill">Send Proposal</button>
                     </form>
@@ -119,15 +181,16 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3>Login</h3>
-            <form>
-                <input type="email" placeholder="Email" class="modal-input">
-                <input type="password" placeholder="Password" class="modal-input">
+            <form id="modalLoginForm">
+                <input type="email" placeholder="Email" class="modal-input" id="modalEmail" required>
+                <input type="password" placeholder="Password" class="modal-input" id="modalPassword" required>
                 <button type="submit" class="btn-fill full-width">Login</button>
             </form>
         </div>
     </div>
 
     <script>
+        // Modal logic
         const modal = document.getElementById("loginModal");
         const btn = document.getElementById("loginBtn");
         const span = document.querySelector(".close");
@@ -135,6 +198,27 @@
         btn.onclick = () => modal.style.display = "flex";
         span.onclick = () => modal.style.display = "none";
         window.onclick = (e) => { if(e.target == modal) modal.style.display = "none"; }
+
+        // Modal login form
+        const modalForm = document.getElementById("modalLoginForm");
+        if(modalForm) {
+            modalForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                alert("Logged in successfully (demo)");
+                modal.style.display = "none";
+            });
+        }
+
+        // Contact form submission
+        const contactForm = document.getElementById("contactForm");
+        if(contactForm) {
+            contactForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const name = document.getElementById("fullname").value;
+                alert(`Thanks ${name}! Your proposal has been sent. I'll get back soon.`);
+                contactForm.reset();
+            });
+        }
     </script>
 </body>
 </html>
